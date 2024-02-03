@@ -900,6 +900,7 @@ function Summon()
     noclip = true
     blocking = true
     game.Workspace.Camera.CameraSubject = getHumanoid(STAND)
+    game.Workspace.FallenPartsDestroyHeight = -10000
     if FlyMode == 'Heaven' then
         HOVER:Play(0.28)
         HOVERV2:Play(0.28)
