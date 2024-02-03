@@ -1652,15 +1652,10 @@ OWNER.Chatted:Connect(function(msg)
         game.ReplicatedStorage.MainEvent:FireServer("PhoneCall",OWNER.Name)
     end
 end)
+
 OWNER.Chatted:Connect(function(msg)
     if msg == ('/e q') then
-        if SummonPose == 'Pose1' then
-            SummonPose1()
-        elseif SummonPose == 'Pose2' then
-            SummonPose2()
-        elseif SummonPose == 'Pose3' then
-            SummonPose3()
-        elseif SummonPose == false then
+        if SummonPose == false then
             Summon()
             SummonAudio()
         end
