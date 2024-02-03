@@ -14,7 +14,6 @@ MaskMode = getgenv().LynixSettings.MaskMode
 ChatCmds = getgenv().LynixSettings.ChatCmds
 AttackMode = getgenv().LynixSettings.AttackMode
 GunMode = getgenv().LynixSettings.GunMode
-SummonPose = getgenv().LynixSettings.SummonPose
 PosingType = getgenv().LynixSettings.Posing
 Hidescreen = getgenv().LynixSettings.Hidescreen
 Smoothing = getgenv().LynixSettings.Smoothing
@@ -28,7 +27,6 @@ Fpscap = getgenv().LynixSettings.FPSCAP
 lowgraphics = getgenv().LynixSettings.LowGraphics
 Alt = getgenv().LynixSettings.Alt
 CustomSummon = getgenv().LynixSettings.CustomSummon
-SummonPose = getgenv().LynixSettings.SummonPose
 game.Workspace.FallenPartsDestroyHeight = -1005
 AutoPredic = Prediction
 AutoGunPredic = gunkillprediction
@@ -3943,7 +3941,7 @@ function commands(msg,plr)
                 Chat("My Owner is"..StandOwner.."!")
             end
         end
-        
+
         if string.find(SplitCMD[1], '!bring') then
 			if Mod.Name == OWNER.Name then else
                 Stop()
