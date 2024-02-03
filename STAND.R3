@@ -1576,18 +1576,6 @@ Create('Refresh!',function()
     game:GetService("ReplicatedStorage").MainEvent:FireServer("Block",false)
 end)
 
-Create(CustomSummon,function()
-    if SummonPose == '777777777' then
-        SummonPose1()
-    elseif SummonPose == '777777' then
-        SummonPose2()
-    elseif SummonPose == '777777777' then
-        SummonPose3()
-    elseif SummonPose == false then
-        SummonAudio()
-        Summon()
-    end
-end)
 Create('s',function()
     SummonAudio()
     Summon()
