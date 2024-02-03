@@ -26,7 +26,6 @@ Bind = getgenv().LynixSettings.AntiStomp
 Fpscap = getgenv().LynixSettings.FPSCAP
 lowgraphics = getgenv().LynixSettings.LowGraphics
 Alt = getgenv().LynixSettings.Alt
-CustomSummon = getgenv().LynixSettings.CustomSummon
 game.Workspace.FallenPartsDestroyHeight = -1005
 AutoPredic = Prediction
 AutoGunPredic = gunkillprediction
