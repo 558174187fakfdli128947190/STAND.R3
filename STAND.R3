@@ -1058,7 +1058,7 @@ if getgenv()._== 'This script made by "ticxyylolz#9164" | https://discord.gg/msg
         getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.new(0,-800,0)
         vanish = true
     end
-    
+
     function Heal()
         Stop()
         noclip = true
