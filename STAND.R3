@@ -1759,6 +1759,10 @@ end
     Create('Vanish!',function()
         Vanish()
     end)
+
+    Create('Vanish!',function()
+        Chat("test work")
+    end)
     
     Create('Boom!',function()
         Stop()
