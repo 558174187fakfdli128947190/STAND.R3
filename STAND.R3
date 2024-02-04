@@ -2077,6 +2077,10 @@ end
         getHumanoid(STAND):UnequipTools()
     end)
     
+    Create("Test!",function()
+        Chat("test work")
+    end)
+
     Create("Autodrop!",function()
         Chat("AutoDrop Enabled!")
         autodrop = true
