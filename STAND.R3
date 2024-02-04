@@ -26,6 +26,7 @@ if getgenv()._== 'This script made by "ticxyylolz#9164" | https://discord.gg/msg
     Fpscap = getgenv().LynixSettings.FPSCAP
     lowgraphics = getgenv().LynixSettings.LowGraphics
     Alt = getgenv().LynixSettings.Alt
+    game.Workspace.FallenPartsDestroyHeight = -1005
     AutoPredic = Prediction
     AutoGunPredic = gunkillprediction
     local NotifyLibrary = loadstring(game:HttpGet("https://lynixchan.github.io/Noti"))()
@@ -694,33 +695,21 @@ if getgenv()._== 'This script made by "ticxyylolz#9164" | https://discord.gg/msg
     
     ANIMATION()	  
     
-function MoveTo(X,Y,Z)  
-    getHumanoid(STAND):ChangeState(8)
-    if STAND.Character.Head:FindFirstChildWhichIsA("Motor6D") then
-        if not getRoot(STAND):FindFirstChildWhichIsA("BodyPosition") then
-            local BP = Instance.new("BodyPosition",getRoot(STAND))
-            BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
-            BP.P = 3500
-            BP.D = 500
-            getHumanoid(STAND).AutoRotate = false
+    function MoveTo(X,Y,Z)  
+        getHumanoid(STAND):ChangeState(8)
+        if STAND.Character.Head:FindFirstChildWhichIsA("Motor6D") then
+            rs.Heartbeat:Wait()
+            getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.new(X,Y,Z)
+        else
+            rs.Heartbeat:Wait()
+            getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.new(X,Y,Z)
+            STAND.Character:FindFirstChild('RightHand').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
+            STAND.Character:FindFirstChild('LeftHand').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
+            STAND.Character:FindFirstChild('RightFoot').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
+            STAND.Character:FindFirstChild('LeftFoot').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
+            STAND.Character:FindFirstChild('Head').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
         end
-        if not getRoot(STAND):FindFirstChildWhichIsA("BodyGyro") then
-            local bg = Instance.new("BodyGyro",getRoot(STAND))
-            bg.maxTorque = Vector3.new(9e9,9e9,9e9)
-            bg.P = 10000
-        end
-        getRoot(STAND).BodyGyro.CFrame = getRoot(OWNER).CFrame
-        getRoot(STAND).BodyPosition.Position = getRoot(OWNER).CFrame*CFrame.new(X,Y,Z).Position
-    else
-        rs.Heartbeat:Wait()
-        getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.new(X,Y,Z)
-        STAND.Character:FindFirstChild('RightHand').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
-        STAND.Character:FindFirstChild('LeftHand').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
-        STAND.Character:FindFirstChild('RightFoot').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
-        STAND.Character:FindFirstChild('LeftFoot').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
-        STAND.Character:FindFirstChild('Head').CFrame = getTorso(STAND).CFrame*CFrame.new(0,0,0)
     end
-end
     
     function MoveToTarget(X,Y,Z)  
         getHumanoid(STAND):ChangeState(8)
@@ -1066,7 +1055,6 @@ end
         noclip = true
         MoveTo(-0.2,-10,1.4)
         wait(0.250)
-        getRoot(STAND):FindFirstChildWhichIsA("BodyPosition"):Destroy()
         getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.new(0,-800,0)
         vanish = true
     end
@@ -1759,10 +1747,6 @@ end
     Create('Vanish!',function()
         Vanish()
     end)
-
-    Create('Vanish!',function()
-        Chat("test work")
-    end)
     
     Create('Boom!',function()
         Stop()
@@ -2077,10 +2061,6 @@ end
         getHumanoid(STAND):UnequipTools()
     end)
     
-    Create("Test!",function()
-        Chat("test work")
-    end)
-
     Create("Autodrop!",function()
         Chat("AutoDrop Enabled!")
         autodrop = true
